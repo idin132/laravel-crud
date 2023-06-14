@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,37 +31,44 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    
+
                     <li class="nav-item">
-                        <a href="/admin"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="/admin"><i class="menu-icon fa fa-laptop"></i></a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>8</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i></a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-user"></i><a href="">4</a></li>
-                            <li><i class="fa fa-money"></i><a href="">5</a></li>
+                            <li><i class="fa fa-user"></i><a href=""></a></li>
+                            <li><i class="fa fa-money"></i><a href=""></a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>9</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i></a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-user"></i><a href="">6</a></li>
-                            <li><i class="menu-icon fa fa-credit-card-alt"></i><a href="">7</a></li>
+                            <li><i class="menu-icon fa fa-user"></i><a href=""></a></li>
+                            <li><i class="menu-icon fa fa-credit-card-alt"></i><a href=""></a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-handshake-o"></i>1</a>
+                        <a href=""><i class="menu-icon fa fa-handshake-o"></i></a>
                     </li>
 
                     <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-money"></i>2</a>
+                        <a href=""><i class="menu-icon fa fa-money"></i></a>
                     </li>
 
                     <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-cog"></i>3</a>
+                        <a href=""><i class="menu-icon fa fa-cog"></i></a>
                     </li>
-                    
+
+                    <li class="nav-item">
+                        <form action="{{url('actionlogout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-dark">Logout</button>
+                        </form>
+                    </li>
+
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -90,21 +98,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{asset('images/user.jpeg')}}" alt="User Avatar">
-                        </a>
-
-                        <div class="user-menu dropdown-menu">
-                            <div class="container">
-                                <form action="{{url('admin/actionlogout')}}" method="post">
-                                  @csrf
-                                  <button type="submit" class="btn btn-dark">Logout</button>
-                                </form>
-                              </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
         </header>
@@ -113,7 +106,7 @@
         <div class="content">
             @yield('content')
         </div>
-        
+
         <!-- /.content -->
         <div class="clearfix"></div>
     </div>
@@ -129,14 +122,19 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.jqueryui.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('#maintable').DataTable( {
-            "order": [[6, "desc"]]
+        $(document).ready(function() {
+            $('#maintable').DataTable({
+                "order": [
+                    [6, "desc"]
+                ]
+            });
+            $('#verif').DataTable({
+                "order": [
+                    [7, "desc"]
+                ]
+            });
         });
-        $('#verif').DataTable( {
-            "order": [[7, "desc"]]
-        });
-    });
-</script>
+    </script>
 </body>
+
 </html>

@@ -16,3 +16,5 @@ class cast extends Model
         'bio'
     ];
 }
+
+

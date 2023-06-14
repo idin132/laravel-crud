@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CastController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,15 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [CastController::class, 'index'])->name('welcome');
+
 
 Route::resource('cast', CastController::class);
+
+Route::get('login', [LoginController::class, 'login'])->name('login');
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::get('/', [CastController::class, 'index']);
+});
+
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::post('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
