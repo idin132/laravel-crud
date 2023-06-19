@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cast_id');
             $table->foreign('cast_id')->references('id')->on('cast');
             $table->string('nama');
+            $table->timestamps();
         });
     }
 

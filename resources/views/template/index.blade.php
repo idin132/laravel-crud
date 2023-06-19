@@ -33,9 +33,9 @@
                 <ul class="nav navbar-nav">
 
                     <li class="nav-item">
-                        <a href="/admin"><i class="menu-icon fa fa-laptop"></i></a>
+                        <a href="{{ route('cast.index')}}"><i class="menu-icon fa fa-laptop"></i>Table Cast</a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
+                    <!-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i></a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-user"></i><a href=""></a></li>
@@ -48,18 +48,18 @@
                             <li><i class="menu-icon fa fa-user"></i><a href=""></a></li>
                             <li><i class="menu-icon fa fa-credit-card-alt"></i><a href=""></a></li>
                         </ul>
+                    </li> -->
+
+                    <li class="nav-item">
+                        <a href="{{ route('genre.index')}}"><i class="menu-icon fa fa-handshake-o"></i>Table Genre</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-handshake-o"></i></a>
+                        <a href="{{ route('user.profile.show', ['id' => Auth::user()->id]) }}"><i class="menu-icon fa fa-money"></i>Profile</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-money"></i></a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href=""><i class="menu-icon fa fa-cog"></i></a>
+                        <a href="{{ route('peran.index')}}"><i class="menu-icon fa fa-cog"></i>Peran</a>
                     </li>
 
                     <li class="nav-item">

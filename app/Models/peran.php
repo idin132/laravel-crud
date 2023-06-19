@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cast extends Model
+class peran extends Model
 {
     use HasFactory;
-    protected $table = "cast";
+    protected $table = "peran";
     protected $fillable = [
         'id',
-        'nama',
-        'umur',
-        'bio'
+        'film_id',
+        'cast_id',
+        'nama'
     ];
 
-    public function peran()
-    {
-        return $this->belongsToMany(peran::class);
-    }
+    public function cast()
+{
+    return $this->belongsToMany(cast::class);
+}
+
 }
